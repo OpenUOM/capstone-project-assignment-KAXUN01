@@ -139,8 +139,8 @@ const updateStudent = async (name, age, hometown, id) => {
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql, [name, age, hometown, id])
-            .then(() => {
-                resolve({status: "Successfully updated student"});
+            .then((data) => {
+                resolve(data);
             })
             .catch((error) => {
                 reject(error);
