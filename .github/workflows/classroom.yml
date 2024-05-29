@@ -6,8 +6,8 @@ permissions:
   checks: write
   actions: read
   contents: read
-    jobs:
-    build:
+jobs:
+  build:
     name: Autograding
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
@@ -17,9 +17,9 @@ permissions:
         node-version: 16
     - uses: actions/checkout@v4
     - uses: education/autograding@v1
-      run-autograding-tests:
-        runs-on: ubuntu-latest
-        if: github.actor != 'github-classroom[bot]'
+    run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Backend List Teachers
